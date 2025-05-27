@@ -17,11 +17,11 @@ if not os.path.exists(csv_path):
     df = extract_text_chunks(pdf_path)
     df.to_csv(csv_path, index=False)
 else:
-    print("[INFO] CSV már létezik")
+    print("[INFO] CSV already exist")
 
 # 3. Embedding generálás vagy betöltés
 model = SentenceTransformer("all-mpnet-base-v2")
 chunks = load_chunks_from_csv(csv_path)
 embeddings = generate_embeddings(chunks, model, embedding_path)
 
-print("✔️ Teszt sikeres! Embedding shape:", embeddings.shape)
+print("✔️ Test success! Embedding shape:", embeddings.shape)

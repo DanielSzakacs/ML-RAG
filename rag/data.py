@@ -14,9 +14,9 @@ def download_pdf(pdf_url: str, save_path: str):
         response = requests.get(pdf_url)
         with open(save_path, "wb") as f:
             f.write(response.content)
-        print(f"[INFO] PDF letöltve: {save_path}")
+        print(f"[INFO] PDF download: {save_path}")
     else:
-        print("[INFO] PDF már létezik")
+        print("[INFO] PDF already exists")
 
 def extract_text_chunks(pdf_path: str, number_of_chunk: int = 5):
     doc = fitz.open(pdf_path)
