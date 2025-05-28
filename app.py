@@ -51,13 +51,22 @@ def get_page_image(page_number):
     img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
     return img
 
+def extract_answer_from_generated_text(text: str) -> str:
+    if "Answer:" in text:
+        return text.split("Answer:")[1].strip()
+    elif "<start_of_turn>model" in text:
+        return text.split("<start_of_turn>model")[-1].strip()
+    else:
+        return text.strip()
+    
 # Gradio callback
 def rag_ask(query):
     top_chunks = get_top_chunks(query, chunks, embeddings, model)
     prompt = format_prompt(query, top_chunks)
     answer = query_llm(prompt)
+    clean_answer = extract_answer_from_generated_text(answer)
     page_img = get_page_image(top_chunks[0]["page_number"])
-    return answer, page_img
+    return clean_answer, page_img
 
 # Gradio UI
 demo = gr.Interface(
