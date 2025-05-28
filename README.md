@@ -4,6 +4,7 @@ This is a simple but complete **Retrieval-Augmented Generation (RAG)** demo. It 
 <p align="left">
   <img src="data/img.png" alt="ARIMA" width="500"/>
 </p>
+
 ## **How it works**
 
 1. **PDF loading and processing**  
