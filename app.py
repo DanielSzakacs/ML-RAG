@@ -66,8 +66,8 @@ demo = gr.Interface(
     outputs=["text", "image"],
     title="📚 RAG Demo: Business Analysis",
     description="Ask a question from the PDF and you'll get the answer + the source page.<br><br>" \
-    "Download PDF: <a href='https://raw.githubusercontent.com/DanielSzakacs/RAG-demo-v1/main/source/businessAnalysis.pdf'>click here</a><br>" \
-    "<a href='https://github.com/DanielSzakacs/ML-RAG'>Github readme</a><br>",
+    "<a href='https://raw.githubusercontent.com/DanielSzakacs/RAG-demo-v1/main/source/businessAnalysis.pdf'>Download PDF</a><br>" \
+    "<a href='https://github.com/DanielSzakacs/ML-RAG'>Visit Github repo</a><br>",
     examples=[
         "What is Porter's Value Chain?",
         "What are value propositions?",
@@ -75,6 +75,4 @@ demo = gr.Interface(
     ]
 )
 
-# if __name__ == "__main__":
-#     demo.launch(share=True)
 demo.launch()
