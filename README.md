@@ -55,3 +55,6 @@ It balances **response quality, cost, and runtime constraints**, which makes it 
 - Sentence Transformers (`all-mpnet-base-v2`)
 - Transformers / Hugging Face Inference API
 - PyMuPDF (PDF parsing)
+
+## **Data source**
+Paul, D., Cadle, J., & Yeates, D. (Eds.). (2014). Business analysis (3rd ed.). BCS, The Chartered Institute for IT. https://nibmehub.com/opac-service/pdf/read/Business%20Analysis.pdf
