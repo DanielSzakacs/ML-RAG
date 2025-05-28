@@ -1,7 +1,9 @@
 # 📚 **RAG Demo: Business Analysis PDF**
 
 This is a simple but complete **Retrieval-Augmented Generation (RAG)** demo. It uses a PDF textbook on _business analysis_ as its knowledge source. The system can answer English questions by retrieving relevant parts of the document and generating answers using a language model.
-
+<p align="left">
+  <img src="data/img.png" alt="ARIMA" width="500"/>
+</p>
 ## **How it works**
 
 1. **PDF loading and processing**  
