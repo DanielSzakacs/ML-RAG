@@ -39,7 +39,7 @@ It balances **response quality, cost, and runtime constraints**, which makes it 
 
 ## **Try it live**
 
-👉 [Hugging Face Space](hhttps://huggingface.co/spaces/DanielSokach/RAG)
+👉 [Hugging Face Space](https://huggingface.co/spaces/DanielSokach/RAG)
 
 ## **Example questions**
 
