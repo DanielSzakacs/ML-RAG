@@ -12,7 +12,6 @@ embeddings = load_embeddings(embedding_path)
 query = "What is the purpose of Porter's Value Chain?"
 top_chunks = get_top_chunks(query, chunks, embeddings, model)
 
-print("🔍 Top releváns részek:")
 for chunk in top_chunks:
     print(f"\n--- Page {chunk['page_number']} ---")
     print(chunk["sentence_chunk"][:400], "...")
