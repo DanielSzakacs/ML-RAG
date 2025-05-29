@@ -20,5 +20,4 @@ top_chunks = get_top_chunks(query, chunks, embeddings, model, k=3)
 prompt = format_prompt(query, top_chunks)
 response = query_llm(prompt)
 
-print("🧠 LLM answer:")
 print(response)
