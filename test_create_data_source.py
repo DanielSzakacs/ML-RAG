@@ -19,7 +19,7 @@ if not os.path.exists(csv_path):
 else:
     print("[INFO] CSV already exist")
 
-# 3. Embedding generálás vagy betöltés
+# 3. Load or create embedding
 model = SentenceTransformer("all-mpnet-base-v2")
 chunks = load_chunks_from_csv(csv_path)
 embeddings = generate_embeddings(chunks, model, embedding_path)
