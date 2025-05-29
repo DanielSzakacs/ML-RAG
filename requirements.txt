@@ -16,7 +16,7 @@ numpy==1.24.3
 transformers==4.44.2
 gradio==5.6.0
 
-# Torch CPU-only (ZeroGPU-kompatibilis!)
+# Torch CPU-only
 torch==2.5.1
 torchvision==0.20.1
 --extra-index-url https://download.pytorch.org/whl/cpu
