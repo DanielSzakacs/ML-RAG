@@ -61,6 +61,9 @@ def extract_answer_from_generated_text(text: str) -> str:
     
 # Gradio callback
 def rag_ask(query):
+    if not query.strip():
+        return "The user did not enter a question. Please ask your question so I can help.", None
+
     top_chunks = get_top_chunks(query, chunks, embeddings, model)
     prompt = format_prompt(query, top_chunks)
     answer = query_llm(prompt)
