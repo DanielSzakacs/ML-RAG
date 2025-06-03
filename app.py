@@ -61,6 +61,7 @@ def extract_answer_from_generated_text(text: str) -> str:
     
 # Gradio callback
 def rag_ask(query):
+    print("[INFO] Quary " + query)
     if not query.strip():
         return "The user did not enter a question. Please ask your question so I can help.", None
 
@@ -68,18 +69,20 @@ def rag_ask(query):
     prompt = format_prompt(query, top_chunks)
     answer = query_llm(prompt)
     clean_answer = extract_answer_from_generated_text(answer)
+    print("[INFO] Answer " + clean_answer)
     page_img = get_page_image(top_chunks[0]["page_number"])
     return clean_answer, page_img
 
 # Gradio UI
 demo = gr.Interface(
     fn=rag_ask,
-    inputs="text",
-    outputs=["text", "image"],
+    inputs= gr.Textbox(label="❓ Question about Business Analysis"),
+    outputs=[gr.Textbox(label="ℹ️ Answer"), gr.Image(label="🖼️ The most relevant page from the Business Analysis PDF")],
     title="📚 RAG Demo: Business Analysis",
-    description="Ask a question from the PDF and you'll get the answer + the source page.<br><br>" \
-    "<a href='https://raw.githubusercontent.com/DanielSzakacs/RAG-demo-v1/main/source/businessAnalysis.pdf'>Download PDF</a><br>" \
-    "<a href='https://github.com/DanielSzakacs/ML-RAG'>Visit Github repo</a><br>",
+    description="Ask a question from the PDF and you'll get the answer + the source page.<br>" \
+    "Please enter a complete and meaningful question in English — this helps the language model provide the most accurate and relevant answer.<br><br>" \
+    "For more information checkout my <a href='https://github.com/DanielSzakacs/ML-RAG'>GitHub ReadMe</a><br>" \
+    "Source: Paul, D., Cadle, J., & Yeates, D. (Eds.). (2014). Business analysis (3rd ed.). BCS, The Chartered Institute for IT. https://nibmehub.com/opac-service/pdf/read/Business%20Analysis.pdf",
     examples=[
         "What is Porter's Value Chain?",
         "What are value propositions?",
