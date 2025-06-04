@@ -64,6 +64,8 @@ def rag_ask(query):
     print("[INFO] Quary " + query)
     if not query.strip():
         return "The user did not enter a question. Please ask your question so I can help.", None
+    if "hi" in query.strip().lower():
+        return "Please enter a complete and meaningful question in English", None 
 
     top_chunks = get_top_chunks(query, chunks, embeddings, model)
     prompt = format_prompt(query, top_chunks)
